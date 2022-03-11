@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+
+<div th:insert="blocks/header :: header"></div>
+<table border="1">
+    <tr>
+        <th>№ рейса</th>
+        <th>Время прибытия</th>
+    </tr>
+    <tr th:each="ft : ${Flights}">
+        <td th:text="${ft.name}"></td>
+        <td th:text="${ft.landingtimeString}"></td>
+        <td th:text="${ft.delayed}"></td>
+    </tr>
+</table>
+
+
+<!--p th:text="'Hello, ' + ${text} + '!'" /-->
+
+</body>
+</html>
